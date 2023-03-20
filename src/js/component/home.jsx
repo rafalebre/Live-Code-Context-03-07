@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { First } from "./first.jsx";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	return (
+	const [data, setData] = useState ();
+	return ( 
 		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
+			<input type="text" onChange={(e) => setData(e.target.value)} />
+			<h1 className="text-center mt-5">Hello {data}!</h1>
+			<First mydata={data}/>
 			<p>
 				<img src={rigoImage} />
 			</p>
